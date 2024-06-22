@@ -67,4 +67,46 @@ def adjust_results4_isadog(results_dic, dogfile):
     Returns:
            None - results_dic is mutable data type so no return needed.
     """           
+    # Creates dognames dictionary for quick matching to results_dic labels
+    dognames_dic = dict()
+    
+    # Reads in dognames from file, 1 name per line & automatically closes file
+    with open(dogfile, 'r') as infile:
+        # Reads in dognames from first line
+        line = infile.readline()
+        
+        # Processes each line in file until reaching EOF
+        while line != "":
+            # Process line by striping newline character from line
+            line = line.rstrip()
+            
+            # Adds dogname to dognames_dic if it doesn't already exist in the dictionary
+            if line not in dognames_dic:
+                dognames_dic[line] = 1
+            else:
+                print("** Warning: Duplicate dognames", line)
+            
+            # Reads in next line to be processed with while loop
+            line = infile.readline()
+    
+    # Add to results_dic whether pet labels & classifier labels are dogs by adding
+    # index 3 & index 4 to results_dic dictionary for each of the images
+    for key in results_dic:
+        # Pet Image Label IS of Dog (e.g. found in dognames_dic)
+        if results_dic[key][0] in dognames_dic:
+            # Pet Label is a Dog & Classifier Label is a Dog (TRUE POSITIVE)
+            if results_dic[key][1] in dognames_dic:
+                results_dic[key].extend((1, 1))
+            # Pet Label is a Dog & Classifier Label is NOT a Dog (FALSE NEGATIVE)
+            else:
+                results_dic[key].extend((1, 0))
+        
+        # Pet Image Label IS NOT a Dog (e.g. NOT found in dognames_dic)
+        else:
+            # Pet Label is NOT a Dog & Classifier Label is a Dog (FALSE POSITIVE)
+            if results_dic[key][1] in dognames_dic:
+                results_dic[key].extend((0, 1))
+            # Pet Label is NOT a Dog & Classifier Label is NOT a Dog (TRUE NEGATIVE)
+            else:
+                results_dic[key].extend((0, 0))
     None
