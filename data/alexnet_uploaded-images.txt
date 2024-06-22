@@ -3,14 +3,17 @@ Command Line Arguments:
     arch = alexnet 
  dogfile = dognames.txt
 
-Pet Image Label Dictionary has 6 key-value pairs.
-Below are 6 of them:
+Pet Image Label Dictionary has 9 key-value pairs.
+Below are 9 of them:
  1 key:                    cow_01.jpeg  label:                        cow
- 2 key:                     Dog_01.jpg  label:                        dog
- 3 key:                     Dog_02.jpg  label:                        dog
- 4 key:                     Dog_03.jpg  label:                        dog
- 5 key:                 monkey_01.jpeg  label:                     monkey
- 6 key:                  coffee_01.jpg  label:                     coffee
+ 2 key:                     Dog_06.jpg  label:                        dog
+ 3 key:                     Dog_04.jpg  label:                        dog
+ 4 key:                     Dog_05.jpg  label:                        dog
+ 5 key:                     Dog_01.jpg  label:                        dog
+ 6 key:                     Dog_02.jpg  label:                        dog
+ 7 key:                     Dog_03.jpg  label:                        dog
+ 8 key:                 monkey_01.jpeg  label:                     monkey
+ 9 key:                  coffee_01.jpg  label:                     coffee
 
      MATCH:
 
@@ -18,6 +21,15 @@ Below are 6 of them:
 
                    cow_01.jpeg: 
 Real:                        cow   Classifier:                             ox
+
+                    Dog_06.jpg: 
+Real:                        dog   Classifier:                          conch
+
+                    Dog_04.jpg: 
+Real:                        dog   Classifier:               golden retriever
+
+                    Dog_05.jpg: 
+Real:                        dog   Classifier:                 english setter
 
                     Dog_01.jpg: 
 Real:                        dog   Classifier:                         kuvasz
@@ -34,7 +46,7 @@ Real:                     monkey   Classifier:                         wombat
                  coffee_01.jpg: 
 Real:                     coffee   Classifier:                      crock pot
 
-# Total Images 6 # Matches: 0 # NOT Matches: 6
+# Total Images 9 # Matches: 0 # NOT Matches: 9
 
      MATCH:
 
@@ -43,6 +55,18 @@ Real:                     coffee   Classifier:                      crock pot
                    cow_01.jpeg: 
 Real:                        cow   Classifier:                             ox  
 PetLabelDog: 0  ClassLabelDog: 0
+
+                    Dog_06.jpg: 
+Real:                        dog   Classifier:                          conch  
+PetLabelDog: 1  ClassLabelDog: 0
+
+                    Dog_04.jpg: 
+Real:                        dog   Classifier:               golden retriever  
+PetLabelDog: 1  ClassLabelDog: 1
+
+                    Dog_05.jpg: 
+Real:                        dog   Classifier:                 english setter  
+PetLabelDog: 1  ClassLabelDog: 1
 
                     Dog_01.jpg: 
 Real:                        dog   Classifier:                         kuvasz  
@@ -64,28 +88,31 @@ PetLabelDog: 0  ClassLabelDog: 0
 Real:                     coffee   Classifier:                      crock pot  
 PetLabelDog: 0  ClassLabelDog: 0
 
-# Total Images 6 # Matches: 0 # NOT Matches: 6
+# Total Images 9 # Matches: 0 # NOT Matches: 9
 
  ** Statistics from calculates_results_stats() function:
-N Images:  6  N Dog Images:  3  N NotDog Images:  3 
+N Images:  9  N Dog Images:  6  N NotDog Images:  3 
 Pct Corr dog:  66.7 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
 
  ** Check Statistics - calculated from this function as a check:
-N Images:  6  N Dog Images:  3  N NotDog Images:  3 
+N Images:  9  N Dog Images:  6  N NotDog Images:  3 
 Pct Corr dog:  66.7 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
 
 *** Results Summary for CNN Model Architecture ALEXNET ***
-Number of Images    :   6
-Number of Dog Images:   3
+Number of Images    :   9
+Number of Dog Images:   6
 Number of "Not-a" Dog Images:   3
  
 100.0% Correct 'Not-a' Dog
 66.7% Correct Dogs
 
 INCORRECT Dog/NOT Dog Assignments:
+Real:                        dog   Classifier:                          conch
 Real:                        dog   Classifier:          diaper, nappy, napkin
 
 INCORRECT Dog Breed Assignment:
+Real:                        dog   Classifier:               golden retriever
+Real:                        dog   Classifier:                 english setter
 Real:                        dog   Classifier:                         kuvasz
 Real:                        dog   Classifier:                         kuvasz
 

@@ -3,14 +3,17 @@ Command Line Arguments:
     arch = vgg 
  dogfile = dognames.txt
 
-Pet Image Label Dictionary has 6 key-value pairs.
-Below are 6 of them:
+Pet Image Label Dictionary has 9 key-value pairs.
+Below are 9 of them:
  1 key:                    cow_01.jpeg  label:                        cow
- 2 key:                     Dog_01.jpg  label:                        dog
- 3 key:                     Dog_02.jpg  label:                        dog
- 4 key:                     Dog_03.jpg  label:                        dog
- 5 key:                 monkey_01.jpeg  label:                     monkey
- 6 key:                  coffee_01.jpg  label:                     coffee
+ 2 key:                     Dog_06.jpg  label:                        dog
+ 3 key:                     Dog_04.jpg  label:                        dog
+ 4 key:                     Dog_05.jpg  label:                        dog
+ 5 key:                     Dog_01.jpg  label:                        dog
+ 6 key:                     Dog_02.jpg  label:                        dog
+ 7 key:                     Dog_03.jpg  label:                        dog
+ 8 key:                 monkey_01.jpeg  label:                     monkey
+ 9 key:                  coffee_01.jpg  label:                     coffee
 
      MATCH:
 
@@ -21,6 +24,15 @@ Real:                     coffee   Classifier:                     coffee mug
 
                    cow_01.jpeg: 
 Real:                        cow   Classifier:                             ox
+
+                    Dog_06.jpg: 
+Real:                        dog   Classifier:                        gazelle
+
+                    Dog_04.jpg: 
+Real:                        dog   Classifier:               golden retriever
+
+                    Dog_05.jpg: 
+Real:                        dog   Classifier:               golden retriever
 
                     Dog_01.jpg: 
 Real:                        dog   Classifier:                         kuvasz
@@ -34,7 +46,7 @@ Real:                        dog   Classifier:             bedlington terrier
                 monkey_01.jpeg: 
 Real:                     monkey   Classifier:                        macaque
 
-# Total Images 6 # Matches: 1 # NOT Matches: 5
+# Total Images 9 # Matches: 1 # NOT Matches: 8
 
      MATCH:
 
@@ -47,6 +59,18 @@ PetLabelDog: 0  ClassLabelDog: 0
                    cow_01.jpeg: 
 Real:                        cow   Classifier:                             ox  
 PetLabelDog: 0  ClassLabelDog: 0
+
+                    Dog_06.jpg: 
+Real:                        dog   Classifier:                        gazelle  
+PetLabelDog: 1  ClassLabelDog: 0
+
+                    Dog_04.jpg: 
+Real:                        dog   Classifier:               golden retriever  
+PetLabelDog: 1  ClassLabelDog: 1
+
+                    Dog_05.jpg: 
+Real:                        dog   Classifier:               golden retriever  
+PetLabelDog: 1  ClassLabelDog: 1
 
                     Dog_01.jpg: 
 Real:                        dog   Classifier:                         kuvasz  
@@ -64,26 +88,31 @@ PetLabelDog: 1  ClassLabelDog: 1
 Real:                     monkey   Classifier:                        macaque  
 PetLabelDog: 0  ClassLabelDog: 0
 
-# Total Images 6 # Matches: 1 # NOT Matches: 5
+# Total Images 9 # Matches: 1 # NOT Matches: 8
 
  ** Statistics from calculates_results_stats() function:
-N Images:  6  N Dog Images:  3  N NotDog Images:  3 
-Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
+N Images:  9  N Dog Images:  6  N NotDog Images:  3 
+Pct Corr dog:  83.3 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
 
  ** Check Statistics - calculated from this function as a check:
-N Images:  6  N Dog Images:  3  N NotDog Images:  3 
-Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
+N Images:  9  N Dog Images:  6  N NotDog Images:  3 
+Pct Corr dog:  83.3 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
 
 *** Results Summary for CNN Model Architecture VGG ***
-Number of Images    :   6
-Number of Dog Images:   3
+Number of Images    :   9
+Number of Dog Images:   6
 Number of "Not-a" Dog Images:   3
  
 100.0% Correct 'Not-a' Dog
-100.0% Correct Dogs
-16.7% Match
+83.3% Correct Dogs
+11.1% Match
+
+INCORRECT Dog/NOT Dog Assignments:
+Real:                        dog   Classifier:                        gazelle
 
 INCORRECT Dog Breed Assignment:
+Real:                        dog   Classifier:               golden retriever
+Real:                        dog   Classifier:               golden retriever
 Real:                        dog   Classifier:                         kuvasz
 Real:                        dog   Classifier:                         kuvasz
 Real:                        dog   Classifier:             bedlington terrier
